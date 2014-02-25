@@ -2,7 +2,10 @@ package dmmt.dp.main;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -12,6 +15,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import dmmt.dp.main.creativetab.placeholder.tabDPBlocksPlaceholder;
+import dmmt.dp.main.creativetab.placeholder.tabDPItemsPlaceholder;
 import dmmt.dp.blockgen.BlockGenerator;
 import dmmt.dp.blocks.rawores.TitaniumOre;
 import dmmt.dp.blocks.rawores.WatermelonStone;
@@ -23,10 +28,13 @@ import dmmt.dp.blocks.rawstones.GreenGranite;
 import dmmt.dp.blocks.rawstones.Marble;
 import dmmt.dp.blocks.rawstones.Pumice;
 import dmmt.dp.blocks.rawstones.Siltstone;
+import dmmt.dp.items.tools.Chizel;
+import dmmt.dp.main.creativetab.tabDPBlocks;
+import dmmt.dp.main.creativetab.tabDPItems;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
 public class Main {
- 
+
 	//blocks
     public final static Block andesite = new Andesite(500, Material.rock);
     public final static Block dioriteQuartz = new DioriteQuartz(502, Material.rock);
@@ -40,6 +48,17 @@ public class Main {
     //ores
     public final static Block watermelonStone = new WatermelonStone(1000, Material.rock);
     public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
+    
+    //Itens
+    public static Item chizel = new Chizel(1500, ToolMaterial.IRON);
+    
+    //creative tabs
+    public static CreativeTabs tabDPBlocks = new tabDPBlocks(CreativeTabs.getNextID(), "tabDPBlocks");
+    public static CreativeTabs tabDPItems = new tabDPItems(CreativeTabs.getNextID(), "tabDPItems");
+    
+    //creative tabs place holder
+    public static Item tabDPBlocksPlaceholder = new tabDPBlocksPlaceholder(2000).setUnlocalizedName("tabDPBlocksPlaceholder");
+    public static Item tabDPItemsPlaceholder = new tabDPItemsPlaceholder(2000).setUnlocalizedName("tabDPItemsPlaceholder");
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -81,6 +100,10 @@ public class Main {
         
                 GameRegistry.registerWorldGenerator(blockGenerator, 1);
                 
+                //Creativetabs Placeholder
+                GameRegistry.registerItem(tabDPBlocksPlaceholder, "tabDPBlocksPlaceholder");
+                GameRegistry.registerItem(tabDPItemsPlaceholder, "tabDPItemsPlaceholder");
+
                 
                 //Crafting Recipes
                 
