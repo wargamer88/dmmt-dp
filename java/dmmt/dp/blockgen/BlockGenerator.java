@@ -35,7 +35,7 @@ public class BlockGenerator implements IWorldGenerator {
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
 		//add stones
-		int veinsize = 256;
+		int veinsize = 32;
 		
 		this.addOreSpawn(Main.andesite, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 5, 255);
 		if(biomeGenBase.biomeName == "taigaHills" || biomeGenBase.biomeName == "jungleHills" || biomeGenBase.biomeName == "desertHills" || biomeGenBase.biomeName == "extremeHills" || biomeGenBase.biomeName == "forestHills" || biomeGenBase.biomeName == "iceMountains" || biomeGenBase.biomeName == "mushroomIsland" || biomeGenBase.biomeName == "mushroomIslandShore"){
