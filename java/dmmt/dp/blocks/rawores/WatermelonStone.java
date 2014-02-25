@@ -1,9 +1,9 @@
-package dmmt.mod1.blocks.rawores;
+package dmmt.dp.blocks.rawores;
 
 import java.util.Random;
 
-import dmmt.mod1.basic.Basic;
-import dmmt.mod1.basic.ModInfo;
+import dmmt.dp.main.Main;
+import dmmt.dp.main.ModInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,15 +11,14 @@ import net.minecraft.item.Item;
 
 public class WatermelonStone extends Block {
 
-	public WatermelonStone(int id, Material par2Material) {
-		super(id, par2Material);
-		//CHANGE TO CORRECT HARDNESS
-		setHardness(4.0F);
+	public WatermelonStone(int ii, Material par2Material) {
+		super(par2Material);
 		
-		setStepSound(Block.soundStoneFootstep);
-		setUnlocalizedName("watermelonStone");
+		setHardness(4.0F);
+		setStepSound(Block.soundTypeStone);
+		setBlockName("watermelonStone");
 		setCreativeTab(CreativeTabs.tabFood);
-		setTextureName(ModInfo.NAME.toLowerCase() + ":melonstone");
+		setBlockTextureName(ModInfo.NAME.toLowerCase() + ":melonstone");
 	}
 	
 	/**

@@ -11,7 +11,7 @@ import dmmt.dp.main.ModInfo;
 
 public class Andesite extends Block {
 
-	public Andesite(Material par2Material) {
+	public Andesite(int i, Material par2Material) {
 		super(par2Material);
 		
 		//CHANGE TO CORRECT HARDNESS
@@ -22,12 +22,6 @@ public class Andesite extends Block {
 		setCreativeTab(CreativeTabs.tabBlock);
 		setBlockTextureName(ModInfo.NAME.toLowerCase() + ":andesite");
 		setHarvestLevel("pickaxe", 2);
-	}
-	
-	public int idDropped(int metadata, Random random, int fortune){
-		return Main.andesite.getBlock;
-	}
-	
-	
+	}	
 
 }
