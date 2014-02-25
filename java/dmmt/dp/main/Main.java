@@ -2,8 +2,8 @@ package dmmt.dp.main;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -12,10 +12,17 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.dp.blockgen.BlockGenerator;
-import dmmt.dp.blocks.rawores.rawores.*;
-import dmmt.dp.blocks.rawores.rawstones.*;
+import dmmt.dp.blocks.rawores.TitaniumOre;
+import dmmt.dp.blocks.rawores.WatermelonStone;
+import dmmt.dp.blocks.rawstones.Andesite;
+import dmmt.dp.blocks.rawstones.Diorite;
+import dmmt.dp.blocks.rawstones.DioriteQuartz;
+import dmmt.dp.blocks.rawstones.Dolomite;
+import dmmt.dp.blocks.rawstones.GreenGranite;
+import dmmt.dp.blocks.rawstones.Marble;
+import dmmt.dp.blocks.rawstones.Pumice;
+import dmmt.dp.blocks.rawstones.Siltstone;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
 public class Main {
@@ -59,18 +66,18 @@ public class Main {
                 
                 //gameregistry of stones
                 
-                GameRegistry.registerBlock(andesite, "andesite"); LanguageRegistry.addName(andesite, "Andesite");
-                GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz");
-                GameRegistry.registerBlock(dolomite, "dolomite"); LanguageRegistry.addName(dolomite, "Dolomite");
-                GameRegistry.registerBlock(greenGranite, "greenGranite"); LanguageRegistry.addName(greenGranite, "Green Granite");
-                GameRegistry.registerBlock(marble, "marble"); LanguageRegistry.addName(marble, "Marble");
-                GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice");
-                GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone");
-                GameRegistry.registerBlock(diorite, "diorite"); LanguageRegistry.addName(diorite, "Diorite");
+                GameRegistry.registerBlock(andesite, "andesite");
+                GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz");
+                GameRegistry.registerBlock(dolomite, "dolomite");
+                GameRegistry.registerBlock(greenGranite, "greenGranite");
+                GameRegistry.registerBlock(marble, "marble");
+                GameRegistry.registerBlock(pumice, "pumice");
+                GameRegistry.registerBlock(siltstone, "siltstone");
+                GameRegistry.registerBlock(diorite, "diorite");
                 
                 //ores
-                GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore");
-                GameRegistry.registerBlock(titaniumOre, "titaniumOre"); LanguageRegistry.addName(titaniumOre, "Titanium Ore");
+                GameRegistry.registerBlock(watermelonStone, "watermelonStone");
+                GameRegistry.registerBlock(titaniumOre, "titaniumOre");
         
                 GameRegistry.registerWorldGenerator(blockGenerator, 1);
                 
@@ -88,11 +95,11 @@ public class Main {
                 //mossy cobblestone and stonebricks
                 
                 //first you devine what you are going to need for that recipe, like this
-                ItemStack mossyStack = new ItemStack(Block.cobblestoneMossy);
-                ItemStack mossyBrickStack = new ItemStack(Block.stoneBrick, 1, 1);
-                ItemStack cobbleStack = new ItemStack(Block.cobblestone);
-                ItemStack stoneBrickStack = new ItemStack(Block.stoneBrick);
-                ItemStack vineStack = new ItemStack(Block.vine);
+                ItemStack mossyStack = new ItemStack(Blocks.mossy_cobblestone);
+                ItemStack mossyBrickStack = new ItemStack(Blocks.stonebrick, 1, 1);
+                ItemStack cobbleStack = new ItemStack(Blocks.cobblestone);
+                ItemStack stoneBrickStack = new ItemStack(Blocks.stonebrick);
+                ItemStack vineStack = new ItemStack(Blocks.vine);
                 
                 //Then the actual crafting recipe
                 GameRegistry.addShapelessRecipe(mossyStack,cobbleStack, vineStack);
